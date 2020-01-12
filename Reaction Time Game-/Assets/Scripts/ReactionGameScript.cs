@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ReactionGameScript : MonoBehaviour
 {
     public GameObject target;
@@ -17,18 +18,35 @@ public class ReactionGameScript : MonoBehaviour
     public GameObject ReactionMenuPanel;
     public Text scoreSummary;
     public Text AccuracyText;
+    public Text HighScoreText;
     public bool game;
     public Button Easy;
     public Button Medium;
     public Button Hard;
     int difficulty;
+    public double highScoreE;
+    public double highScoreM;
+    public double highScoreH;
 
-
+    public void save(){
+        SaveSystem.Save(this);
+    }
+    public void load(){
+        SaveData data = SaveSystem.Load();
+        print(data.highScoreE);
+        if(data != null){
+            highScoreE = data.highScoreE;
+            highScoreM = data.highScoreM;
+            highScoreH = data.highScoreH;
+            HighScoreText.text= "Easy High Score: " + highScoreE + "\nMedium High Score: " + highScoreM + "\nHard High Score: " + highScoreH;
+        }
+    }
     void Start()
     {
         ReactionMenuPanel.SetActive(true);
         game=false;
         MediumClick();
+        load();
     }
 
     // Update is called once per frame
@@ -56,7 +74,23 @@ public class ReactionGameScript : MonoBehaviour
         game=false;
         ReactionMenuPanel.SetActive(true);
         scoreSummary.text="You Pressed \n"+ score + " Targets \nand Lasted "+gameTime.ToString("F2")+" seconds";
-        AccuracyText.text="Accuracy: " + (100.0f*(score)/(score+misClicks)).ToString("F1") +"%";
+        if((score+misClicks)==0){
+            AccuracyText.text="";
+        }
+        else{
+            AccuracyText.text="Accuracy: " + (100.0f*(score)/(score+misClicks)).ToString("F1") +"%";
+        }
+        if(spawnTime==.65f && score > highScoreE){
+            highScoreE=score;
+        }
+        else if(spawnTime==.4f && score > highScoreM){
+            highScoreM=score;
+        }
+        else if(spawnTime== .3f && score > highScoreH){
+            highScoreH=score;
+        }
+        HighScoreText.text= "Easy High Score: " + highScoreE + "\nMedium High Score: " + highScoreM + "\nHard High Score: " + highScoreH;
+        save();
     }
     public void restartGame (){
         ReactionMenuPanel.SetActive(false);
