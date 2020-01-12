@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AdManager
     - DeathEffectControl
     - OnTouchDown
     - ReactionGameScript
@@ -25,6 +26,9 @@ ScriptsOnlyBuild:
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.Advertisements.Editor.dll:
+    - UnityEngine.Advertisements.Placeholder
+    - UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -57,31 +61,33 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9674}
+      Script: {instanceID: 9682}
     - Class: 114
-      Script: {instanceID: 9836}
+      Script: {instanceID: 9844}
     - Class: 114
-      Script: {instanceID: 9876}
+      Script: {instanceID: 9886}
     - Class: 114
-      Script: {instanceID: 9928}
+      Script: {instanceID: 9946}
     - Class: 114
-      Script: {instanceID: 10142}
+      Script: {instanceID: 10160}
     - Class: 114
-      Script: {instanceID: 10278}
+      Script: {instanceID: 10298}
     - Class: 114
-      Script: {instanceID: 10648}
+      Script: {instanceID: 10668}
     - Class: 114
-      Script: {instanceID: 11122}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11148}
+      Script: {instanceID: 11170}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11414}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 11436}
+      Script: {instanceID: 11460}
     - Class: 114
-      Script: {instanceID: 11500}
+      Script: {instanceID: 11524}
+    - Class: 114
+      Script: {instanceID: 21676}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -423,7 +429,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: cbe08c98b00bab9712e04791fa0bacaf
+      Hash: 93a4d2240be70c28c4d02ef8b11e56f8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ReactionGameScript
@@ -547,6 +553,42 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.Editor.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: ApplicationQuit
+  - hash:
+      serializedVersion: 2
+      Hash: 88e2c6f501bf5dead831a3e44c30de40
+    assemblyName: UnityEngine.Advertisements.Editor.dll
+    namespaceName: UnityEngine.Advertisements.Platform.Editor
+    className: BannerPlaceholder
+  - hash:
+      serializedVersion: 2
+      Hash: a325152ad9563ed900af221c132fea36
+    assemblyName: UnityEngine.Advertisements.Editor.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: CoroutineExecutor
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.Editor.dll
+    namespaceName: UnityEngine.Advertisements
+    className: Placeholder
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Monetization.Editor.dll
+    namespaceName: UnityEngine.Monetization
+    className: Placeholder
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AdManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

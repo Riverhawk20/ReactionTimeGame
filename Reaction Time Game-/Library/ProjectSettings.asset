@@ -706,10 +706,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 1f06c894-472d-4e44-9b4c-6b64962b9710
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: AccuracyGame
+  organizationId: cadenson
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

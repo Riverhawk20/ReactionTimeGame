@@ -33,7 +33,6 @@ public class ReactionGameScript : MonoBehaviour
     }
     public void load(){
         SaveData data = SaveSystem.Load();
-        print(data.highScoreE);
         if(data != null){
             highScoreE = data.highScoreE;
             highScoreM = data.highScoreM;
@@ -63,7 +62,7 @@ public class ReactionGameScript : MonoBehaviour
         if(timer >= spawnTime && alive){
             timer -= spawnTime;
            //random position (0,0) is bottom left while (1,1) is top right
-           Vector2 randomPos = Camera.main.ViewportToWorldPoint(new Vector2(Random.Range(0.15f,0.85f), Random.Range(0.1f,0.9f))); 
+           Vector2 randomPos = Camera.main.ViewportToWorldPoint(new Vector2(Random.Range(0.25f,0.85f), Random.Range(0.1f,0.8f))); 
            Instantiate(target, randomPos, Quaternion.identity);
     }
 
@@ -101,7 +100,7 @@ public class ReactionGameScript : MonoBehaviour
         fails=0;
         misClicks=0;
         game=true;
-        Vector2 randomPos = Camera.main.ViewportToWorldPoint(new Vector2(UnityEngine.Random.Range(0.15f,0.85f), UnityEngine.Random.Range(0.1f,0.8f))); 
+        Vector2 randomPos = Camera.main.ViewportToWorldPoint(new Vector2(UnityEngine.Random.Range(0.25f,0.85f), UnityEngine.Random.Range(0.1f,0.8f))); 
         Instantiate(target, randomPos, Quaternion.identity);
         scoreText.text = "Score: 0";
         livesText.text = "Lives: 3"; 
